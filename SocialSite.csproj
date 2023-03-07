@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
+    <PackageReference Include="microsoft.entityframeworkcore.relational" Version="7.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="microsoft.data.sqlclient" Version="5.1.0" />

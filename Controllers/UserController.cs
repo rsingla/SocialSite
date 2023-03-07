@@ -51,9 +51,8 @@ public class UserController : ControllerBase
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            user.error = new Error("User not found");
-            return user;
+          Console.WriteLine(e);
+          throw new Exception("Failed to Retrieve the User");
         }
         return user;
     }
@@ -77,7 +76,7 @@ public class UserController : ControllerBase
         if (result) {
             return Ok();
         }
-        return BadRequest();
+        throw new Exception("Failed to Delete User");
     }
 
     [HttpPost("")]

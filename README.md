@@ -34,6 +34,7 @@ dotnet add package Dapper
 dotnet add package microsoft.data.sqlclient
 dotnet add package microsoft.entityframeworkcore
 dotnet add package microsoft.entityframeworkcore.sqlserver
+dotnet add package microsoft.entityframeworkcore.relational
 dotnet add package microsoft.Extensions.Configuration
 dotnet add package microsoft.Extensions.Configuration.JSON
 dotnet add package Newtonsoft.Json
