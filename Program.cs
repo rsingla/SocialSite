@@ -51,43 +51,6 @@ namespace SocialSite
 
             app.Run();
 
-
-            Computer computer = new Computer()
-            {
-                Motherboard = "Yohaan",
-                CPUCores = 4,
-                HasWifi = false,
-                HasLTE = false,
-                ReleaseDate = new DateTime(2014, 01, 22),
-                Price = 2000,
-                VideoCard = ""
-            };
-
-            dataContextEF.Add(computer);
-            dataContextEF.SaveChanges();
-
-            string sql = @"INSERT INTO TutorialAppSchema.Computer (
-                Motherboard, 
-                CPUCores, 
-                HasWifi, 
-                HasLTE, 
-                ReleaseDate, 
-                Price, 
-                VideoCard) 
-                            VALUES ('" +
-                            computer.Motherboard + "', " +
-                            computer.CPUCores + ", '" +
-                            computer.HasWifi + "', '" +
-                            computer.HasLTE + "', '" +
-                            computer.ReleaseDate + "', " +
-                            computer.Price + ", '" +
-                            computer.VideoCard + "')";
-
-            Console.WriteLine(sql);
-
-
-            File.WriteAllText("log.txt", sql);
-
         }
     }
 }
