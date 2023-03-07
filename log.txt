@@ -1,0 +1,9 @@
+INSERT INTO TutorialAppSchema.Computer (
+                Motherboard, 
+                CPUCores, 
+                HasWifi, 
+                HasLTE, 
+                ReleaseDate, 
+                Price, 
+                VideoCard) 
+                            VALUES ('Yohaan', 4, 'False', 'False', '1/22/2014 12:00:00 AM', 2000, '')

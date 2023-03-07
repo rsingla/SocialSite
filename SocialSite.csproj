@@ -1,10 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="microsoft.data.sqlclient" Version="5.1.0" />
+    <PackageReference Include="microsoft.entityframeworkcore" Version="7.0.3" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="7.0.3" />
+    <PackageReference Include="microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="microsoft.Extensions.Configuration.JSON" Version="7.0.0" />
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
 </Project>
+
