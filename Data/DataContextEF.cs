@@ -16,7 +16,7 @@ namespace SocialSite.Data
           _config = config;
         }
 
-       public DbSet<Users>? Users { get; set; }
+       public DbSet<User>? Users { get; set; }
        protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             if(!options.IsConfigured) 
@@ -29,7 +29,7 @@ namespace SocialSite.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("TutorialAppSchema");
-            modelBuilder.Entity<Users>().ToTable("Computer").HasKey(u => u.UserId);
+            modelBuilder.Entity<User>().ToTable("Computer").HasKey(u => u.UserId);
         }
 
     }
