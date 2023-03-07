@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SocialSite.Models;
 using SocialSite.Data;
+using AutoMapper;
 
 namespace SocialSite.Controllers;
 
@@ -11,12 +12,17 @@ public class UserEFController : ControllerBase
     private readonly ILogger<UserEFController> _logger;
     private readonly DataContextEF _entityFramework;  
 
+    IMapper _mapper;
+
     IConfigurationBuilder configBuilder = new ConfigurationBuilder();
 
     public UserEFController(ILogger<UserEFController> logger, IConfiguration configuration)
     {
         _logger = logger;
         _entityFramework = new DataContextEF(configuration);
+        _mapper = new Mapper(new MapperConfiguration(cfg =>{
+            cfg.CreateMap<UserDto, User>();
+        }));
     }
 
 
@@ -77,13 +83,9 @@ public class UserEFController : ControllerBase
     [HttpPost("/ef")]
     public IActionResult AddUserEF(UserDto userDto)
     {
-        User user = new User();
-        user.FirstName = userDto.FirstName;
-        user.LastName = userDto.LastName;
-        user.Active = userDto.Active;
-        user.Email = userDto.Email;
-        user.Gender = userDto.Gender;
-        bool result = _entityFramework.Users.Update(user).IsKeySet;
+        User user = _mapper.Map<User>(userDto);
+
+        bool result = _entityFramework.Users.Add(user).IsKeySet;
 
         if (result)
         {

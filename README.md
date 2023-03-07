@@ -2,10 +2,11 @@
 
 Step 1: To build a new project use
 
-dotnet new console -o SocialSite -f net7.0
+dotnet new webapi -o SocialSite -f net7.0 (This is not required step - Skip this step)
 
-Step 2: Using Azure Data studio on Mac for connecting to local database
+Step 2:  Setting up and Connecting to local database
 
+Using Azure Data studio on Mac
 
 To Start a new Database on your local machine - Use below instruction
 
@@ -30,6 +31,7 @@ docker start sql_connect
 
 Step 3: Connecting the code to SQL
 
+----INSTALL BELOW PACKAGES ---------
 dotnet add package Dapper
 dotnet add package microsoft.data.sqlclient
 dotnet add package microsoft.entityframeworkcore
@@ -38,21 +40,13 @@ dotnet add package microsoft.entityframeworkcore.relational
 dotnet add package microsoft.Extensions.Configuration
 dotnet add package microsoft.Extensions.Configuration.JSON
 dotnet add package Newtonsoft.Json
-
+dotnet add package AutoMapper
 
 dotnet restore
 
 
-To Start a webapplication 
-
-dotnet new webapi --name SocialSite
-
 To test run 
-dotnet run 
+dotnet run or dotnet watch run 
 
 Take the url in the 
 http://localhost:5288/swagger/index.html
-
-curl -X 'GET' \
-  'http://localhost:5288/WeatherForecast' \
-  -H 'accept: text/plain'
